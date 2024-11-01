@@ -2,7 +2,7 @@ name: Run Scraper Every Minute
 
 on:
   schedule:
-    - cron: "* * * * *" # This cron expression runs the job every minute
+    - cron: "*/5 * * * *" # Try every 5 minutes for testing
 
 jobs:
   scrape_job:
@@ -19,7 +19,7 @@ jobs:
       - name: Set up Node.js
         uses: actions/setup-node@v2
         with:
-          node-version: "18" # Specify the Node.js version
+          node-version: "18"
 
       - name: Install dependencies
         run: npm install
